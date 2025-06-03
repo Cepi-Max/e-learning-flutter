@@ -1,0 +1,55 @@
+name: padi_kita_apk
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # flutter storage
+  flutter_secure_storage: ^9.2.4
+
+  # http
+  http: ^1.4.0
+
+  # provider
+  provider: ^6.1.5
+
+  # webview flutter
+  webview_flutter: ^4.13.0
+
+  # image picker
+  image_picker: ^1.1.2
+
+  # file picker
+  file_picker: ^10.1.9
+
+  # universal io
+  universal_io: ^2.2.2
+
+  # permission handler
+  permission_handler: ^12.0.0+1
+
+  # month picker dialog
+  month_picker_dialog: ^6.2.1
+
+  # intl
+  intl: ^0.20.2
+
+  # jwt decoder
+  # jwt_decoder: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+# To add assets to your application, add an assets section, like this:
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.jpg
