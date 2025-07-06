@@ -1,4 +1,4 @@
-package com.example.padi_kita_apk
+package com.example.edu_sohib
 
 import io.flutter.embedding.android.FlutterActivity
 

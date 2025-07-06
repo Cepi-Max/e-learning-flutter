@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.padi_kita_apk"
+    namespace = "com.example.edu_sohib"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "27.0.12077973"
 
@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.padi_kita_apk"
+        applicationId = "com.example.edu_sohib"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

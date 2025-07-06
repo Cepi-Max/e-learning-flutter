@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../farmer/datapadi_screen.dart';
 import 'package:provider/provider.dart';
+import '../dosen/welcome_dosen_screen.dart';
 import '../../providers/auth_provider.dart';
-import '../dashboard/dashboard_screen.dart';
-import '../buyer/layouts/app_template.dart';
+import '../mahasiswa/welcome_mahasiswa_screen.dart';
 import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -33,23 +32,19 @@ class _SplashScreenState extends State<SplashScreen> {
     if (!mounted) return;
 
     if (isAuthenticated && userRole != null) {
-      if (userRole == 'admin') {
+      if (userRole == 'mahasiswa') {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const DashboardScreen()),
+          MaterialPageRoute(builder: (_) => const StudentWelcomePage()),
         );
-      } else if (userRole == 'user') {
+      } else if (userRole == 'dosen') {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const AppTemplate()),
-        );
-      } else if (userRole == 'petani') {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const DataPadiScreen()),
+          MaterialPageRoute(builder: (_) => const LecturerWelcomePage()),
         );
       }
     } else {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const LoginScreen()),
-      );
+      Navigator.of(
+        context,
+      ).pushReplacement(MaterialPageRoute(builder: (_) => const LoginScreen()));
     }
   }
 
@@ -68,16 +63,13 @@ class _SplashScreenState extends State<SplashScreen> {
                 return const Icon(Icons.broken_image, size: 100);
               },
             ),
-            const SizedBox(height: 20),
-            const CircularProgressIndicator(),
-            const SizedBox(height: 20),
-            const Text(
-              'DataPadi',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            // const SizedBox(height: 20),
+            // const CircularProgressIndicator(),
+            // const SizedBox(height: 20),
+            // const Text(
+            //   'Edu Sohib',
+            //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            // ),
           ],
         ),
       ),
