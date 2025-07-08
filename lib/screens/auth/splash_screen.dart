@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../dosen/welcome_dosen_screen.dart';
-import '../../providers/auth_provider.dart';
 import '../mahasiswa/welcome_mahasiswa_screen.dart';
-import 'login_screen.dart';
+import '../auth/login_screen.dart';
+import '../../providers/auth_provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,8 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _checkAuth() async {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
 
-    await Future.delayed(const Duration(seconds: 2));
-
+    // LANGSUNG cek auth, tanpa delay 2 detik
     final isAuthenticated = await authProvider.checkAuthStatus();
     final userRole = authProvider.user?.role.toLowerCase();
 
@@ -50,26 +49,26 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/logo.jpg',
+            // Logo
+            Image(
+              image: AssetImage('assets/images/logo.jpg'),
               width: 150,
               height: 150,
-              errorBuilder: (context, error, stackTrace) {
-                return const Icon(Icons.broken_image, size: 100);
-              },
             ),
-            // const SizedBox(height: 20),
-            // const CircularProgressIndicator(),
-            // const SizedBox(height: 20),
-            // const Text(
-            //   'Edu Sohib',
-            //   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            // ),
+            SizedBox(height: 20),
+
+            // Spinner
+            CircularProgressIndicator(),
+
+            SizedBox(height: 10),
+
+            // Teks loading
+            // Text('Memuat aplikasi...', style: TextStyle(fontSize: 16)),
           ],
         ),
       ),

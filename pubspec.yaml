@@ -43,6 +43,12 @@ dependencies:
   # url launcher
   url_launcher: ^6.3.1
 
+  # pdf view
+  flutter_pdfview: ^1.4.1+1
+
+  # dio
+  dio: ^5.8.0+1
+
   # jwt decoder
   # jwt_decoder: ^2.0.1
 

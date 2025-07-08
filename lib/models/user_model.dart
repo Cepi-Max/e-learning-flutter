@@ -6,7 +6,6 @@ class User {
   final String phone_number;
   final String role;
 
-
   User({
     required this.id,
     required this.name,
@@ -26,6 +25,8 @@ class User {
       role: json['role'] ?? 'role tidak ada',
     );
   }
+
+  get fotoProfil => null;
 
   Map<String, dynamic> toJson() {
     return {
